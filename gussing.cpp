@@ -11,21 +11,30 @@ int main() {
   cout << "Guess a number!" << endl;
   cin >> playerNum;
   int guessCount = 1;
-  while((playerNum != randomNum) && (guessCount != 100)) {
-    int var2;
-    if(playerNum > randomNum) {
-      cout << "Too High! " << endl;
-      cout << "Guess a number! " << endl;
-      cin >> var2;
-      playerNum = var2;
-      guessCount++;
+  bool isPlaying = true;
+  while(isPlaying) {
+    while((playerNum != randomNum) && (guessCount != 100)) {
+      int var2;
+      if(playerNum > randomNum) {
+        cout << "Too High! " << endl;
+        cout << "Guess a number! " << endl;
+        cin >> var2;
+        playerNum = var2;
+        guessCount++;
+      }
+      else if(playerNum < randomNum) {
+        cout << "Too Low! " << endl;
+        cout << "Guess a number!" << endl;
+        cin >> var2;
+        playerNum = var2;
+        guessCount++;
+      }
     }
-    else if(playerNum < randomNum) {
-      cout << "Too Low! " << endl;
-      cout << "Guess a number!" << endl;
-      cin >> var2;
-      playerNum = var2;
-      guessCount++;
+    while(PlayAgain) {
+      cout << "You guess in " << randomNum << " guesses!" << endl;
+      cout << "Would you like to play again? (y/n)" << endl;
+      char toPlay;
+      cin >> toPlay;
     }
   }
   return 0;
