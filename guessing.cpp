@@ -1,3 +1,8 @@
+/*Kyle Werstlein
+9/24/19
+Guess a number from 0 - 100
+ */
+
 #include <iostream>
 #include <cstdlib>
 
